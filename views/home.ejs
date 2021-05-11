@@ -1,0 +1,19 @@
+
+<%-include('partials/header');-%>
+<h1>What is EJS?</h1>
+
+
+<p><%=startingContent%></p>
+<!--  for(let i in newPosts)  -->
+<!-- console.log(newPosts[i].title %> -->
+
+<%newPosts.forEach(function(post){%>
+  <h1><%=post.title %></h1>
+  <p><%= post.content.substr(0, 100)+"..."%>
+  <a href="/posts/<%=post._id%>"> Read More</a></p>
+  <!-- j1>console.log(post); -->
+<%})%>
+<!-- <button type="button" name="button"> -->
+  <a class="float btn btn-primary" href="/compose" role="button">Compose</a>
+<!-- </button> -->
+<%-include('partials/footer');-%>
